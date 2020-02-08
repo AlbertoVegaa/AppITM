@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Front End</string>
+    <string name="loading">Loading...</string>
+    <string name="actualizar">Actualizar</string>
+</resources>
