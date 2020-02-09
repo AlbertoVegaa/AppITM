@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">emPrendete</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Hackaton 2020</string>
+    <string name="nav_header_subtitle">Instituto Tecnologico de Matamoros</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Inicio</string>
+    <string name="menu_gallery">Segundo menu</string>
+    <string name="menu_slideshow">Tercera</string>
+    <string name="menu_tools">Cuarta</string>
+    <string name="menu_share">Contacto</string>
+    <string name="menu_send">About</string>
+</resources>
