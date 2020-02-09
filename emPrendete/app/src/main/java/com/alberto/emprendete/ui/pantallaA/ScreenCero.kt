@@ -21,8 +21,8 @@ class ScreenCero : Fragment() {
     ): View? {
         ScreenCeroViewModel =
             ViewModelProviders.of(this).get(screenCeroViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
+        val root = inflater.inflate(R.layout.pantalla_a, container, false)
+        val textView: TextView = root.findViewById(R.id.text_p0)
         ScreenCeroViewModel.text.observe(this, Observer {
             textView.text = it
         })

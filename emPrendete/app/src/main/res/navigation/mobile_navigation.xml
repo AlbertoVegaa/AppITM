@@ -9,35 +9,53 @@
         android:id="@+id/pagina_home"
         android:name="com.alberto.emprendete.ui.pantallaA.ScreenCero"
         android:label="@string/pagina_cero"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/pantalla_a" />
 
     <fragment
         android:id="@+id/pagina_1"
         android:name="com.alberto.emprendete.ui.pantallaB.ScreenUno"
         android:label="@string/pagina_uno"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/pantalla_b" />
 
     <fragment
         android:id="@+id/pagina_2"
         android:name="com.alberto.emprendete.ui.pantallaC.ScreenDos"
         android:label="@string/pagina_dos"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/pantalla_c" />
 
     <fragment
         android:id="@+id/pagina_3"
-        android:name="com.alberto.emprendete.ui.pantallade.ScreenTres"
+        android:name="com.alberto.emprendete.ui.pantallaD.ScreenTres"
         android:label="@string/pagina_tres"
-        tools:layout="@layout/fragment_tools" />
+        tools:layout="@layout/pantalla_d" />
 
     <fragment
         android:id="@+id/pagina_4"
         android:name="com.alberto.emprendete.ui.pantallaE.ScreenCuatro"
         android:label="@string/pagina_cuatro"
-        tools:layout="@layout/fragment_share" />
+        tools:layout="@layout/pantalla_e" />
 
     <fragment
         android:id="@+id/pagina_5"
         android:name="com.alberto.emprendete.ui.pantallaF.ScreenCinco"
         android:label="@string/pagina_cinco"
-        tools:layout="@layout/fragment_send" />
+        tools:layout="@layout/pantalla_f" />
+
+    <fragment
+        android:id="@+id/pagina_6"
+        android:name="com.alberto.emprendete.ui.pantallaG.ScreenSeis"
+        android:label="@string/pagina_seis"
+        tools:layout="@layout/pantalla_g" />
+
+    <fragment
+        android:id="@+id/pagina_7"
+        android:name="com.alberto.emprendete.ui.pantallaH.ScreenSiete"
+        android:label="@string/pagina_siete"
+        tools:layout="@layout/pantalla_h" />
+
+    <fragment
+        android:id="@+id/pagina_8"
+        android:name="com.alberto.emprendete.ui.pantallaI.ScreenOcho"
+        android:label="@string/pagina_ocho"
+        tools:layout="@layout/pantalla_h" />
 </navigation>

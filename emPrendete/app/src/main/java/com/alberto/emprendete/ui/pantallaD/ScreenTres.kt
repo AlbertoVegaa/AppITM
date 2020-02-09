@@ -1,4 +1,4 @@
-package com.alberto.emprendete.ui.pantallaE
+package com.alberto.emprendete.ui.pantallaD
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.alberto.emprendete.R
 
-class ScreenCuatro : Fragment() {
+class ScreenTres : Fragment() {
 
-    private lateinit var ScreenCuatroViewModel: screenCuatroViewModel
+    private lateinit var ScreenTresViewModel: screenTresViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        ScreenCuatroViewModel =
-            ViewModelProviders.of(this).get(screenCuatroViewModel::class.java)
-        val root = inflater.inflate(R.layout.pantalla_e, container, false)
-        val textView: TextView = root.findViewById(R.id.text_p4)
-        ScreenCuatroViewModel.text.observe(this, Observer {
+        ScreenTresViewModel =
+            ViewModelProviders.of(this).get(screenTresViewModel::class.java)
+        val root = inflater.inflate(R.layout.pantalla_d, container, false)
+        val textView: TextView = root.findViewById(R.id.text_p3)
+        ScreenTresViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root

@@ -21,8 +21,8 @@ class ScreenDos : Fragment() {
     ): View? {
         ScreenDosViewModel =
             ViewModelProviders.of(this).get(screenDosViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_slideshow, container, false)
-        val textView: TextView = root.findViewById(R.id.text_slideshow)
+        val root = inflater.inflate(R.layout.pantalla_c, container, false)
+        val textView: TextView = root.findViewById(R.id.text_p2)
         ScreenDosViewModel.text.observe(this, Observer {
             textView.text = it
         })

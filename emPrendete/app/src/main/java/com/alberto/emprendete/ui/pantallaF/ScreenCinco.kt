@@ -21,8 +21,8 @@ class ScreenCinco : Fragment() {
     ): View? {
         ScreenCincoViewModel =
             ViewModelProviders.of(this).get(screenCincoViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_send, container, false)
-        val textView: TextView = root.findViewById(R.id.text_send)
+        val root = inflater.inflate(R.layout.pantalla_f, container, false)
+        val textView: TextView = root.findViewById(R.id.text_p5)
         ScreenCincoViewModel.text.observe(this, Observer {
             textView.text = it
         })

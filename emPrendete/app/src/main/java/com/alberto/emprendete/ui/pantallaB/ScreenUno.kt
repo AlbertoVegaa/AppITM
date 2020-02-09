@@ -17,8 +17,8 @@ class ScreenUno : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         ScreenUnoViewModel =
             ViewModelProviders.of(this).get(screenUnoViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
-        val textView: TextView = root.findViewById(R.id.text_gallery)
+        val root = inflater.inflate(R.layout.pantalla_b, container, false)
+        val textView: TextView = root.findViewById(R.id.text_p1)
         ScreenUnoViewModel.text.observe(this, Observer {
             textView.text = it
         })
