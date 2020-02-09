@@ -3,41 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/pagina_home">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.alberto.emprendete.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:id="@+id/pagina_home"
+        android:name="com.alberto.emprendete.ui.pantallaA.ScreenCero"
+        android:label="@string/pagina_cero"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.alberto.emprendete.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:id="@+id/pagina_1"
+        android:name="com.alberto.emprendete.ui.pantallaB.ScreenUno"
+        android:label="@string/pagina_uno"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.alberto.emprendete.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:id="@+id/pagina_2"
+        android:name="com.alberto.emprendete.ui.pantallaC.ScreenDos"
+        android:label="@string/pagina_dos"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.alberto.emprendete.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
+        android:id="@+id/pagina_3"
+        android:name="com.alberto.emprendete.ui.pantallade.ScreenTres"
+        android:label="@string/pagina_tres"
         tools:layout="@layout/fragment_tools" />
 
     <fragment
-        android:id="@+id/nav_share"
-        android:name="com.alberto.emprendete.ui.share.ShareFragment"
-        android:label="@string/menu_share"
+        android:id="@+id/pagina_4"
+        android:name="com.alberto.emprendete.ui.pantallaE.ScreenCuatro"
+        android:label="@string/pagina_cuatro"
         tools:layout="@layout/fragment_share" />
 
     <fragment
-        android:id="@+id/nav_send"
-        android:name="com.alberto.emprendete.ui.send.SendFragment"
-        android:label="@string/menu_send"
+        android:id="@+id/pagina_5"
+        android:name="com.alberto.emprendete.ui.pantallaF.ScreenCinco"
+        android:label="@string/pagina_cinco"
         tools:layout="@layout/fragment_send" />
 </navigation>

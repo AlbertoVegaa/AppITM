@@ -1,4 +1,4 @@
-package com.alberto.emprendete.ui.share
+package com.alberto.emprendete.ui.pantallaF
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.alberto.emprendete.R
 
-class ShareFragment : Fragment() {
+class ScreenCinco : Fragment() {
 
-    private lateinit var shareViewModel: ShareViewModel
+    private lateinit var ScreenCincoViewModel: screenCincoViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        shareViewModel =
-            ViewModelProviders.of(this).get(ShareViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_share, container, false)
-        val textView: TextView = root.findViewById(R.id.text_share)
-        shareViewModel.text.observe(this, Observer {
+        ScreenCincoViewModel =
+            ViewModelProviders.of(this).get(screenCincoViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_send, container, false)
+        val textView: TextView = root.findViewById(R.id.text_send)
+        ScreenCincoViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root

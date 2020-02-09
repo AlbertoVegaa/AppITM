@@ -1,13 +1,13 @@
-package com.alberto.emprendete.ui.share
+package com.alberto.emprendete.ui.pantallade
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ShareViewModel : ViewModel() {
+class screenTresViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is share Fragment"
+        value = "This is pantallade Fragment"
     }
     val text: LiveData<String> = _text
 }

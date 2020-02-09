@@ -1,4 +1,4 @@
-package com.alberto.emprendete.ui.gallery
+package com.alberto.emprendete.ui.pantallaB
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,16 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.alberto.emprendete.R
 
-class GalleryFragment : Fragment() {
+class ScreenUno : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
+    private lateinit var ScreenUnoViewModel: screenUnoViewModel
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        galleryViewModel =
-            ViewModelProviders.of(this).get(GalleryViewModel::class.java)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        ScreenUnoViewModel =
+            ViewModelProviders.of(this).get(screenUnoViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_gallery, container, false)
         val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(this, Observer {
+        ScreenUnoViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root

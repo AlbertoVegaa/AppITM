@@ -1,4 +1,4 @@
-package com.alberto.emprendete.ui.send
+package com.alberto.emprendete.ui.pantallaE
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.alberto.emprendete.R
 
-class SendFragment : Fragment() {
+class ScreenCuatro : Fragment() {
 
-    private lateinit var sendViewModel: SendViewModel
+    private lateinit var ScreenCuatroViewModel: screenCuatroViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        sendViewModel =
-            ViewModelProviders.of(this).get(SendViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_send, container, false)
-        val textView: TextView = root.findViewById(R.id.text_send)
-        sendViewModel.text.observe(this, Observer {
+        ScreenCuatroViewModel =
+            ViewModelProviders.of(this).get(screenCuatroViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_share, container, false)
+        val textView: TextView = root.findViewById(R.id.text_share)
+        ScreenCuatroViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root

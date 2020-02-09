@@ -6,45 +6,45 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/pagina_home"
             android:icon="@android:drawable/btn_star"
-            android:title="@string/menu_home" />
+            android:title="@string/pagina_cero" />
     </group>
 
     <item android:title="Hackaton 2020">
         <menu>
             <item
-                android:id="@+id/nav_gallery"
+                android:id="@+id/pagina_1"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Participantes" />
+                android:title="@string/pagina_uno" />
             <item
-                android:id="@+id/nav_slideshow"
+                android:id="@+id/pagina_2"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Proyectos" />
+                android:title="@string/pagina_dos" />
             <item
-                android:id="@+id/nav_tools"
+                android:id="@+id/pagina_3"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Mentores" />
+                android:title="@string/pagina_tres" />
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/pagina_4"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Jueces" />
+                android:title="@string/pagina_cuatro" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/pagina_5"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Patrocinadores" />
+                android:title="@string/pagina_cinco" />
             <item
-                android:id="@+id/nav_send2"
+                android:id="@+id/pagina_6"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Comite Organizador" />
+                android:title="@string/pagina_seis" />
             <item
-                android:id="@+id/nav_send3"
+                android:id="@+id/pagina_7"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Conferencias" />
+                android:title="@string/pagina_siete" />
             <item
-                android:id="@+id/nav_send4"
+                android:id="@+id/pagina_8"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Conferencistas" />
+                android:title="@string/pagina_ocho" />
         </menu>
     </item>
 </menu>
