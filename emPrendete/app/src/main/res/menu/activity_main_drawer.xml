@@ -1,38 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@android:drawable/btn_star"
             android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
-        <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Hackaton 2020">
         <menu>
             <item
+                android:id="@+id/nav_gallery"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Participantes" />
+            <item
+                android:id="@+id/nav_slideshow"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Proyectos" />
+            <item
+                android:id="@+id/nav_tools"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Mentores" />
+            <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
+                android:icon="@drawable/ic_menu_send"
+                android:title="Jueces" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
+                android:title="Patrocinadores" />
+            <item
+                android:id="@+id/nav_send2"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Comite Organizador" />
+            <item
+                android:id="@+id/nav_send3"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Conferencias" />
+            <item
+                android:id="@+id/nav_send4"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Conferencistas" />
         </menu>
     </item>
-
 </menu>

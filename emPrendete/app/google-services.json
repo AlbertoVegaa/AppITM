@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "781556060139",
+    "firebase_url": "https://emprendete-842ea.firebaseio.com",
+    "project_id": "emprendete-842ea",
+    "storage_bucket": "emprendete-842ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781556060139:android:8d42651ab0631c648053ae",
+        "android_client_info": {
+          "package_name": "com.alberto.emprendete"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781556060139-v07c18no0ro81i1e0gabem3bsg6es8bh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQO5o2PgaeEAUIx5JUo6K60WcyILA45EU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781556060139-v07c18no0ro81i1e0gabem3bsg6es8bh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781556060139:android:8a05cc0334296f448053ae",
+        "android_client_info": {
+          "package_name": "com.alberto.frontend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781556060139-v07c18no0ro81i1e0gabem3bsg6es8bh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQO5o2PgaeEAUIx5JUo6K60WcyILA45EU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781556060139-v07c18no0ro81i1e0gabem3bsg6es8bh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
