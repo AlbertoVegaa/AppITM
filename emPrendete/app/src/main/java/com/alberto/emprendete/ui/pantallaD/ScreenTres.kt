@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.alberto.emprendete.ui.pantallaD
 
 import android.os.Bundle

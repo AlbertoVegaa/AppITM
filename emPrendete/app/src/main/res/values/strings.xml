@@ -2,20 +2,21 @@
     <string name="app_name">emPrendete</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Hackaton 2020</string>
+    <string name="nav_header_title">Bienvenido</string>
     <string name="nav_header_subtitle">Instituto Tecnologico de Matamoros</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="elemento1_toolbar_btn">Opcion 1</string>
-
-    <string name="pagina_cero">Home</string>
-    <string name="pagina_uno">Pagina 1</string>
-    <string name="pagina_dos">Pagina 2</string>
-    <string name="pagina_tres">Pagina 3</string>
-    <string name="pagina_cuatro">Pagina 4</string>
-    <string name="pagina_cinco">Pagina 5</string>
-    <string name="pagina_seis">Pagina 6</string>
-    <string name="pagina_siete">Pagina 7</string>
-    <string name="pagina_ocho">Pagina 8</string>
-    <string name="TextoDeSplash">\nHackaton\n2020</string>
     <string name="elemento2_toolbar_btn">Opcion 2</string>
+
+    <string name="pagina_cero">emPrendete</string>
+    <string name="pagina_uno">Instituciones Participantes</string>
+    <string name="pagina_dos">Proyectos</string>
+    <string name="pagina_tres">Emite tu Voto</string>
+    <string name="pagina_cuatro">Conferencias</string>
+    <string name="pagina_cinco">Mentores</string>
+    <string name="pagina_seis">Comite Organizador</string>
+    <string name="pagina_siete">Patrocinadores</string>
+    <string name="pagina_ocho">Acerca de</string>
+    <string name="TextoDeSplash">\nCargando...</string>
+
 </resources>

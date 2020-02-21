@@ -10,4 +10,5 @@ class screenCeroViewModel : ViewModel() {
         value = "This is pantallaA Fragment"
     }
     val text: LiveData<String> = _text
+
 }

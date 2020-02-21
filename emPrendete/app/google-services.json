@@ -15,34 +15,13 @@
       },
       "oauth_client": [
         {
-          "client_id": "781556060139-v07c18no0ro81i1e0gabem3bsg6es8bh.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDQO5o2PgaeEAUIx5JUo6K60WcyILA45EU"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "781556060139-v07c18no0ro81i1e0gabem3bsg6es8bh.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:781556060139:android:8a05cc0334296f448053ae",
-        "android_client_info": {
-          "package_name": "com.alberto.frontend"
-        }
-      },
-      "oauth_client": [
+          "client_id": "781556060139-a38m2r41nfd4drjfm59v2rbadubep8a6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alberto.emprendete",
+            "certificate_hash": "17ed48715448ffd1720ce9f5896b81ae295c490f"
+          }
+        },
         {
           "client_id": "781556060139-v07c18no0ro81i1e0gabem3bsg6es8bh.apps.googleusercontent.com",
           "client_type": 3

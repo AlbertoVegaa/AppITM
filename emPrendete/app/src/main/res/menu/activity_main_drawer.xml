@@ -3,47 +3,49 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/pagina_home"
             android:icon="@android:drawable/btn_star"
             android:title="@string/pagina_cero" />
     </group>
-
-    <item android:title="Hackaton 2020">
+    <item android:title="emPrendete">
         <menu>
             <item
                 android:id="@+id/pagina_1"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/icon_instituciones"
                 android:title="@string/pagina_uno" />
             <item
                 android:id="@+id/pagina_2"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/icon_proyectos"
                 android:title="@string/pagina_dos" />
             <item
                 android:id="@+id/pagina_3"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/icon_votopublico"
                 android:title="@string/pagina_tres" />
             <item
                 android:id="@+id/pagina_4"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/icon_conferencias"
                 android:title="@string/pagina_cuatro" />
             <item
                 android:id="@+id/pagina_5"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/icon_mentores"
                 android:title="@string/pagina_cinco" />
             <item
                 android:id="@+id/pagina_6"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/icon_comiteorg"
                 android:title="@string/pagina_seis" />
             <item
                 android:id="@+id/pagina_7"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/icon_patrocinadores"
                 android:title="@string/pagina_siete" />
+        </menu>
+    </item>
+    <item android:title="Aplicacion">
+        <menu>
             <item
                 android:id="@+id/pagina_8"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/icon_about"
                 android:title="@string/pagina_ocho" />
         </menu>
     </item>
