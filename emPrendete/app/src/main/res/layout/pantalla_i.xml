@@ -1,88 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorModoOscuro">
 
     <TextView
         android:id="@+id/text_p8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:text="Equipo de Desarrollo\nemPrendete app"
         android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_margin="20dp"
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/nombreEt"
-        android:layout_width="350dp"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardView1"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="35dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre"
-        app:layout_constraintBottom_toTopOf="@+id/edadEt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_p8" />
+        app:cardBackgroundColor="@color/colorCajaModoOscuro"
+        >
 
-    <EditText
-        android:id="@+id/apellidoEt"
-        android:layout_width="350dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/desarrollador1"
+                android:layout_width="135dp"
+                android:layout_height="135dp"
+                android:layout_margin="10dp"
+                android:contentDescription="foto"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Jesus Alberto Vega Loredo"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:textSize="16dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="Estudiante de la Ingenieria en Sistemas Computacionales\nInstituto Tecnologico de Matamoros"
+                    android:textColor="#ece7e7"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="\njvega1675@itmatamoros.edu.mx"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardView2"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="35dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Apellido"
-        app:layout_constraintBottom_toTopOf="@+id/edadEt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombreEt" />
+        android:layout_alignParentBottom="false"
+        app:cardBackgroundColor="@color/colorCajaModoOscuro">
 
-    <EditText
-        android:id="@+id/edadEt"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:hint="Edad"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/aceptar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_p8" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <RatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:numStars="5"
-        android:stepSize=".5"
-        app:layout_constraintBottom_toTopOf="@+id/aceptar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edadEt" />
+            <ImageView
+                android:id="@+id/idImagen2"
+                android:layout_width="135dp"
+                android:layout_height="135dp"
+                android:layout_margin="10dp"
+                android:contentDescription="foto" />
 
-    <CheckBox
-        android:id="@+id/mexicanCB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Naci en Mexico"
-        app:layout_constraintBottom_toTopOf="@+id/aceptar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <Button
-        android:id="@+id/aceptar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        android:gravity="center"
-        android:text="Aceptar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Juan Antonio Huerta Rodriguez"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="Estudiante de la Ingenieria en Sistemas Computacionales\nInstituto Tecnologico de Matamoros"
+                    android:textColor="#ece7e7"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:text="\njvega1675@itmatamoros.edu.mx"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
