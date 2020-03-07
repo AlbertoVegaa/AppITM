@@ -17,29 +17,24 @@ class ScreenCinco : Fragment() {
     lateinit var anterior:Button
     lateinit var visor_de_datos:TextView
 
-    /*var url1 = "https://firebasestorage.googleapis.com/v0/b/emprendete-842ea.appspot.com/o/yo.png?alt=media&token=f58966d7-9a4a-44be-96c1-7924c1e10c5e"
+    var url1 = "https://firebasestorage.googleapis.com/v0/b/emprendete-842ea.appspot.com/o/yo.png?alt=media&token=f58966d7-9a4a-44be-96c1-7924c1e10c5e"
     var url2 = "https://firebasestorage.googleapis.com/v0/b/emprendete-842ea.appspot.com/o/universidad%20del%20noreste%20de%20mexico.jpg?alt=media&token=8c3dbcc8-4a60-4512-97ed-7c175ed1b0b8"
     var url3 = "https://firebasestorage.googleapis.com/v0/b/emprendete-842ea.appspot.com/o/udm.png?alt=media&token=7aa2a7b2-fda5-45b4-a1a6-0450af19f070"
     val nombres_fic = arrayOf("nombre 1","nombre 2", "nombre 3", "nombre 4", "nombre 5", "nombre 6", "nombre 7")
-    val biografias_fic = arrayOf("biografia 1","biografia 2", "biografia 3", "biografia 4", "biografia 5", "biografia 6", "biografia 7")*/
-    //val fotos_url = arrayOf<String>()
-    //val fotos_url = arrayOf(url1,url2,url3,url1,url2,url3,url1)
+    val biografias_fic = arrayOf("biografia 1","biografia 2", "biografia 3", "biografia 4", "biografia 5", "biografia 6", "biografia 7")
+    val fotos_url = arrayOf(url1,url2,url3,url1,url2,url3,url1)
 
-    // ================= Prueba con datos de firebase en Arrays ==============================
-    val arrayNombres = arrayOf<String>()
-    val arrayBiografias = arrayOf<String>()
-    val arrayFotos = arrayOf<String>()
+    // ================= Prueba con datos de firebase en Arrays Vacios ==============================
+    //val arrayNombres = arrayOf<String>()
+    //val arrayBiografias = arrayOf<String>()
+    //val arrayFotos = arrayOf<String>()
     // ================================== fin de pruebas =====================================
 
     var pos : Int = -1
-    var x=0
-    // arreglo de cadenas vacio //val nombre = arrayOf<tipo>()
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View? {
 
         val root = inflater.inflate(R.layout.pantalla_f, container, false)
         myDatabase = FirebaseDatabase.getInstance().reference
-        //val textView: TextView = root.findViewById(R.id.text_p5)
 
         // Establecer imagen
         //var url = "https://firebasestorage.googleapis.com/v0/b/emprendete-842ea.appspot.com/o/yo.png?alt=media&token=f58966d7-9a4a-44be-96c1-7924c1e10c5e"
@@ -66,15 +61,9 @@ class ScreenCinco : Fragment() {
                             visor_de_datos = root.findViewById(R.id.text)
                             visor_de_datos.append("El nombre es: "+nombre+" \nEl apellido es: "+apellido+" \nBiografia: "+biografia+"\nEmail: "+email+"\nFacebook: "+facebook+"\nTwitter: "+twitter+"\nYoutube: "+youtube+"\nFoto: "+foto+"\n\n")
                             visor_de_datos.setMovementMethod(ScrollingMovementMethod())
-
-                            arrayNombres.set(x,nombre+" "+apellido)
-                            arrayBiografias.set(x,biografia)
-                            arrayFotos.set(x,foto)
                         }
-
                         override fun onCancelled(databaseError: DatabaseError) {}
                     })
-                    x += 1
                 }
             }
             override fun onCancelled(databaseError: DatabaseError) {}
@@ -91,37 +80,34 @@ class ScreenCinco : Fragment() {
             override fun makeView(): View {
                 val textview=TextView(activity)
                 textview.gravity=Gravity.CENTER
+                textview.textSize=22F
                 return textview
             }
         }) // Mostrar el textbox
         switcher_biografias.setFactory (object : ViewSwitcher.ViewFactory {
             override fun makeView(): View {
-                val textView2=TextView(activity)
-                textView2.gravity=Gravity.CENTER
-                return textView2
+                val textview2=TextView(activity)
+                textview2.textSize=18F
+                textview2.gravity=Gravity.START
+                return textview2
             }
         }) // Mostrar el textbox
 
         anterior.setOnClickListener {
             if (pos>0)
             {pos-=1
-                print(pos+x)
-                Glide.with(this).load(arrayFotos[pos]).into(contenedor_imagen)
-                switcher_nombres.setText(arrayNombres[pos])
-                switcher_biografias.setText(arrayBiografias[pos])
-                x+=1
-
+                Glide.with(this).load(fotos_url[pos]).into(contenedor_imagen)
+                switcher_nombres.setText(nombres_fic[pos])
+                switcher_biografias.setText(biografias_fic[pos])
             }
         }
         siguiente.setOnClickListener {
-            //if (pos<nombres_fic.size-1)
-            if (pos<arrayNombres.size-1)
+            if (pos<nombres_fic.size-1)
             {
                 pos+=1
-                Glide.with(this).load(arrayFotos[x]).into(contenedor_imagen)
-                switcher_nombres.setText(arrayNombres[x])
-                switcher_biografias.setText(arrayBiografias[x])
-                x-=1
+                Glide.with(this).load(fotos_url[pos]).into(contenedor_imagen)
+                switcher_nombres.setText(nombres_fic[pos])
+                switcher_biografias.setText(biografias_fic[pos])
             }
         }
         return root
