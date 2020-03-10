@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.alberto.emprendete.R
+var url = "https://mystifying-nightingale-9c518c.netlify.com/00patrocinadores/"
 class ScreenSiete : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val root = inflater.inflate(R.layout.pantalla_h, container, false)
@@ -17,7 +18,7 @@ class ScreenSiete : Fragment() {
             override fun onPageFinished(view: WebView?, url: String?) {
             }
         }
-        web.loadUrl("https://mystifying-nightingale-9c518c.netlify.com/00patrocinadores/")
+        web.loadUrl(url)
         return root
     }
 }
