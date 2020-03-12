@@ -4,12 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-
     tools:context=".ui.pantallaJ.ScreenNueve">
 
     <TextView
+        android:id="@+id/texto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Pantalla J"/>
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:text="Pantalla J"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="20sp"
+        />
 
 </FrameLayout>

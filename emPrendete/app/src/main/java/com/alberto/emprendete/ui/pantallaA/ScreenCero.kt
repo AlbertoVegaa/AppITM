@@ -6,6 +6,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.net.ConnectivityManager
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -55,6 +56,14 @@ class ScreenCero : Fragment() {
         // ==================================== fin de verificacion de internet ===========================================================
 */
         val root = inflater.inflate(R.layout.pantalla_a, container, false)
+
+        val saludo = root.findViewById<TextView>(R.id.saludito)
+        saludo.text = "Bienvenidos al evento de emprendimiento mas importante de Tamaulipas"
+        saludo.setSingleLine()
+        saludo.ellipsize= TextUtils.TruncateAt.MARQUEE
+        saludo.marqueeRepeatLimit = -1
+        saludo.isSelected=true
+
 // =========================================================
         mTextViewData = root.findViewById(R.id.textviewdata)
         myDatabase = FirebaseDatabase.getInstance().reference
@@ -66,9 +75,19 @@ class ScreenCero : Fragment() {
                         override fun onDataChange(dataSnapshot: DataSnapshot) {
                             val nombre = dataSnapshot.child("nombre").getValue().toString()
                             val apellido = dataSnapshot.child("apellido").getValue().toString()
+                            val email = dataSnapshot.child("email").getValue().toString()
+                            val carrera = dataSnapshot.child("carrera").getValue().toString()
+                            val semestre = dataSnapshot.child("semestre").getValue().toString().toInt()
                             val edad = dataSnapshot.child("edad").getValue().toString().toInt()
                             //mTextViewData.setText("El nombre es : "+nombre +" \nEl apellido es: "+apellido+" \nLa edad es: "+edad)
-                            mTextViewData.append("El nombre es : "+nombre +" \nEl apellido es: "+apellido+" \nLa edad es: "+edad+"\n\n")
+                            mTextViewData.append(
+                                        "El nombre es : "+nombre+
+                                        "\nEl apellido es: "+apellido+
+                                        "\nLa edad es: "+edad+
+                                        "\nEl Email es: "+email+
+                                        "\nCursa actualmente: "+carrera+
+                                        " en el : "+semestre+" semestre"+
+                                        "\n\n")
                         }
                         override fun onCancelled(databaseError: DatabaseError) {}
                     })

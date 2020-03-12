@@ -18,8 +18,8 @@ class ScreenCinco : Fragment() {
     lateinit var visor_de_datos:TextView
 
     var url1 = "https://firebasestorage.googleapis.com/v0/b/emprendete-842ea.appspot.com/o/yo.png?alt=media&token=f58966d7-9a4a-44be-96c1-7924c1e10c5e"
-    var url2 = "https://firebasestorage.googleapis.com/v0/b/emprendete-842ea.appspot.com/o/universidad%20del%20noreste%20de%20mexico.jpg?alt=media&token=8c3dbcc8-4a60-4512-97ed-7c175ed1b0b8"
-    var url3 = "https://firebasestorage.googleapis.com/v0/b/emprendete-842ea.appspot.com/o/udm.png?alt=media&token=7aa2a7b2-fda5-45b4-a1a6-0450af19f070"
+    var url2 = "https://firebasestorage.googleapis.com/v0/b/emprendete-842ea.appspot.com/o/chango.webp?alt=media&token=82376219-e8a5-4b46-bd0a-9b957e956942"
+    var url3 = "https://firebasestorage.googleapis.com/v0/b/emprendete-842ea.appspot.com/o/unnamed.jpg?alt=media&token=95ba6f13-90ca-4a45-8358-6de4c0c846a3"
     val nombres_fic = arrayOf("nombre 1","nombre 2", "nombre 3", "nombre 4", "nombre 5", "nombre 6", "nombre 7")
     val biografias_fic = arrayOf("biografia 1","biografia 2", "biografia 3", "biografia 4", "biografia 5", "biografia 6", "biografia 7")
     val fotos_url = arrayOf(url1,url2,url3,url1,url2,url3,url1)
