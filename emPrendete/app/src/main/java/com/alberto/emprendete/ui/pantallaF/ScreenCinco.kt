@@ -45,7 +45,11 @@ class ScreenCinco : Fragment() {
                             val apellido    =   dataSnapshot.child("apellido")  .getValue().toString()
                             val biografia   =   dataSnapshot.child("bio")       .getValue().toString()
                             val foto        =   dataSnapshot.child("img")       .getValue().toString()
+
                             var nombrecompleto = nombre + " " + apellido
+
+                            
+
                             visor_de_datos = root.findViewById(R.id.text)
                             visor_de_datos.append("Nombre Completo: "+nombrecompleto+" \nBiografia: "+biografia+"\nFile: "+foto+"\n\n")
                             visor_de_datos.setMovementMethod(ScrollingMovementMethod())
