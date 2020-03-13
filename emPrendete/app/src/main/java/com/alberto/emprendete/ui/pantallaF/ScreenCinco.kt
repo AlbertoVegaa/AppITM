@@ -13,6 +13,7 @@ class ScreenCinco : Fragment() {
     private lateinit var contenedor_imagen: ImageView
     lateinit var switcher_nombres: TextSwitcher
     lateinit var switcher_biografias: TextSwitcher
+    lateinit var switcher_redes: TextSwitcher
     lateinit var siguiente:Button
     lateinit var anterior:Button
     lateinit var visor_de_datos:TextView
@@ -23,6 +24,7 @@ class ScreenCinco : Fragment() {
 
     val nombres_fic = arrayOf("nombre 1","nombre 2", "nombre 3", "nombre 4", "nombre 5", "nombre 6", "nombre 7")
     val biografias_fic = arrayOf("biografia 1","biografia 2", "biografia 3", "biografia 4", "biografia 5", "biografia 6", "biografia 7")
+    val contacto_fic = arrayOf("contacto 1","contacto 2", "contacto 3", "contacto 4", "contacto 5", "contacto 6", "contacto 7")
     val fotos_url = arrayOf(url1,url2,url3,url1,url2,url3,url1)
 
     var pos : Int = -1
@@ -45,17 +47,35 @@ class ScreenCinco : Fragment() {
                             val apellido    =   dataSnapshot.child("apellido")  .getValue().toString()
                             val biografia   =   dataSnapshot.child("bio")       .getValue().toString()
                             val foto        =   dataSnapshot.child("img")       .getValue().toString()
+                            val twitter     =   dataSnapshot.child("twitter")   .getValue().toString()
+                            val facebook    =   dataSnapshot.child("facebook")  .getValue().toString()
+                            val youtube     =   dataSnapshot.child("youtube")   .getValue().toString()
 
                             var nombrecompleto = nombre + " " + apellido
+                            var contacto = ""
+                            if (facebook!="" && twitter!="" && youtube!=""){
+                                contacto = "Facebook: "+facebook+" Twitter: "+twitter+" Youtube: "+youtube
+                            }
+                            else{
+                                if (facebook!=""){
+                                    contacto = contacto + "Facebook: "+facebook+" "
+                                }
+                                if (twitter!=""){
+                                    contacto = contacto + "Twitter: "+twitter+" "
+                                }
+                                if (youtube!=""){
+                                    contacto = contacto + "Youtube: "+youtube+" "
+                                }
+                            }
 
-                            
 
                             visor_de_datos = root.findViewById(R.id.text)
-                            visor_de_datos.append("Nombre Completo: "+nombrecompleto+" \nBiografia: "+biografia+"\nFile: "+foto+"\n\n")
+                            visor_de_datos.append("Nombre Completo: "+nombrecompleto+" \nBiografia: "+biografia+"\nFile: "+foto+"\n$contacto\n\n")
                             visor_de_datos.setMovementMethod(ScrollingMovementMethod())
 
-                            nombres_fic[indice]=nombrecompleto
-                            biografias_fic[indice]=biografia
+                            nombres_fic[indice]     =   nombrecompleto
+                            biografias_fic[indice]  =   biografia
+                            contacto_fic[indice]    =   contacto
                             indice += 1
                         }
                         override fun onCancelled(databaseError: DatabaseError) {}
@@ -70,6 +90,7 @@ class ScreenCinco : Fragment() {
         contenedor_imagen       =       root.findViewById(R.id.imagen)
         switcher_nombres        =       root.findViewById(R.id.textswitcher)
         switcher_biografias     =       root.findViewById(R.id.biografia)
+        switcher_redes          =       root.findViewById(R.id.contactame)
         siguiente               =       root.findViewById(R.id.siguiente)
         anterior                =       root.findViewById(R.id.anterior)
         switcher_nombres.setFactory (object : ViewSwitcher.ViewFactory {
@@ -88,6 +109,14 @@ class ScreenCinco : Fragment() {
                 return textview2
             }
         }) // Mostrar el textbox
+        switcher_redes.setFactory (object : ViewSwitcher.ViewFactory {
+            override fun makeView(): View {
+                val textview3=TextView(activity)
+                textview3.gravity=Gravity.CENTER
+                textview3.textSize=16F
+                return textview3
+            }
+        }) // Mostrar el textbox
         siguiente.setOnClickListener {
             if (pos<nombres_fic.size-1)
             {
@@ -96,6 +125,7 @@ class ScreenCinco : Fragment() {
                 Glide.with(this).load(fotos_url[pos]).into(contenedor_imagen)
                 switcher_nombres.setText(nombres_fic[pos])
                 switcher_biografias.setText(biografias_fic[pos])
+                switcher_redes.setText(contacto_fic[pos])
             }
         }
         anterior.setOnClickListener {
@@ -106,6 +136,7 @@ class ScreenCinco : Fragment() {
                 Glide.with(this).load(fotos_url[pos]).into(contenedor_imagen)
                 switcher_nombres.setText(nombres_fic[pos])
                 switcher_biografias.setText(biografias_fic[pos])
+                switcher_redes.setText(contacto_fic[pos])
             }
         }
         return root

@@ -28,25 +28,32 @@
         />
     <TextView
         android:id="@+id/acerca"
-        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/textswitcher"
-        android:gravity="center"
-        android:text="Acerca de mi:" />
+        android:text="Un poco sobre mi:"
+        android:textStyle="bold"/>
     <TextSwitcher
         android:id="@+id/textswitcher"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bordetexto"
         android:layout_below="@id/imagen"
-        android:layout_margin="10dp"
-        />
+        android:layout_margin="10dp"/>
     <TextSwitcher
         android:id="@+id/biografia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bordetexto"
         android:layout_below="@id/textswitcher"
+        android:layout_margin="15dp"/>
+    <TextSwitcher
+        android:id="@+id/contactame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bordetexto"
+        android:layout_below="@id/biografia"
         android:layout_margin="15dp"/>
     <TextView
         android:id="@+id/text"
