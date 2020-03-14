@@ -4,6 +4,8 @@
     <color name="colorPrimary">#004562</color>
     <color name="colorAccent">#AACC22</color>
 
+    <color name="colorBotones">#005d85</color>
+
     <color name="colorModoOscuro">#2F363D</color>
     <color name="colorCajaModoOscuro">#1D2125</color>
 </resources>

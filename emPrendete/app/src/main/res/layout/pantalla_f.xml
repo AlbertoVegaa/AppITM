@@ -17,57 +17,95 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
-        android:layout_below="@id/text_p5"
         android:id="@+id/imagen"
         android:layout_width="170dp"
         android:layout_height="170dp"
-        android:layout_margin="10dp"
+        android:layout_below="@id/text_p5"
         android:layout_centerHorizontal="true"
-        android:gravity="center"
-        />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/descripcion_fotos"
+        android:gravity="center" />
+
+    <TextSwitcher
+        android:id="@+id/nombres"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_below="@id/imagen"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bordetexto" />
     <TextView
         android:id="@+id/acerca"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="30dp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textswitcher"
-        android:text="Un poco sobre mi:"
+        android:layout_below="@id/nombres"
+        android:text="@string/mentores_biografiatexto"
         android:textStyle="bold"/>
-    <TextSwitcher
-        android:id="@+id/textswitcher"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bordetexto"
-        android:layout_below="@id/imagen"
-        android:layout_margin="10dp"/>
+
     <TextSwitcher
         android:id="@+id/biografia"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bordetexto"
-        android:layout_below="@id/textswitcher"
-        android:layout_margin="15dp"/>
-    <TextSwitcher
-        android:id="@+id/contactame"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bordetexto"
-        android:layout_below="@id/biografia"
-        android:layout_margin="15dp"/>
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="240dp"
         android:layout_height="140dp"
+        android:layout_below="@id/acerca"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bordetexto" />
+
+    <TextView
+        android:id="@+id/textocontacto"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/biografia"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:scrollbars="vertical"
-        android:background="@drawable/bordetexto"/>
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="231dp"
+        android:text="@string/mentores_contacto_directo"
+        android:textStyle="bold" />
+
+    <TextSwitcher
+        android:id="@+id/contactame"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/textocontacto"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/bordetexto" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/botones_layout"
+        android:layout_below="@id/contactame"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bordetexto"
+        android:scrollbars="vertical" />
     <LinearLayout
+        android:id="@+id/botones_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
@@ -75,13 +113,17 @@
             android:id="@+id/anterior"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Anterior"
+            android:text="@string/btn_anterior_texto"
+            android:textColor="#fff"
+            android:backgroundTint="@color/colorBotones"
             android:layout_weight="1"/>
         <Button
             android:id="@+id/siguiente"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Siguiente"
+            android:text="@string/btn_siguiente_texto"
+            android:textColor="#fff"
+            android:backgroundTint="@color/colorBotones"
             android:layout_weight="1"/>
     </LinearLayout>
 </RelativeLayout>

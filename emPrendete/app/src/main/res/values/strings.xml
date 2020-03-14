@@ -18,5 +18,10 @@
     <string name="pagina_siete">Patrocinadores</string>
     <string name="pagina_ocho">Acerca de</string>
     <string name="TextoDeSplash">\nCargando...</string>
+    <string name="mentores_contacto_directo">Contacto directo:</string>
+    <string name="mentores_biografiatexto">Un poco sobre mi:</string>
+    <string name="descripcion_fotos">imagen</string>
+    <string name="btn_anterior_texto">Anterior</string>
+    <string name="btn_siguiente_texto">Siguiente</string>
 
 </resources>

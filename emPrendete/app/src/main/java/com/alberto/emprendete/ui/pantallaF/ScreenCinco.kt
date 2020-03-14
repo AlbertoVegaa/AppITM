@@ -18,14 +18,10 @@ class ScreenCinco : Fragment() {
     lateinit var anterior:Button
     lateinit var visor_de_datos:TextView
 
-    var url1 = "https://firebasestorage.googleapis.com/v0/b/emprendete-842ea.appspot.com/o/yo.png?alt=media&token=f58966d7-9a4a-44be-96c1-7924c1e10c5e"
-    var url2 = "https://firebasestorage.googleapis.com/v0/b/emprendete-842ea.appspot.com/o/chango.webp?alt=media&token=82376219-e8a5-4b46-bd0a-9b957e956942"
-    var url3 = "https://firebasestorage.googleapis.com/v0/b/emprendete-842ea.appspot.com/o/unnamed.jpg?alt=media&token=95ba6f13-90ca-4a45-8358-6de4c0c846a3"
-
-    val nombres_fic = arrayOf("nombre 1","nombre 2", "nombre 3", "nombre 4", "nombre 5", "nombre 6", "nombre 7")
-    val biografias_fic = arrayOf("biografia 1","biografia 2", "biografia 3", "biografia 4", "biografia 5", "biografia 6", "biografia 7")
-    val contacto_fic = arrayOf("contacto 1","contacto 2", "contacto 3", "contacto 4", "contacto 5", "contacto 6", "contacto 7")
-    val fotos_url = arrayOf(url1,url2,url3,url1,url2,url3,url1)
+    var ListaNombres = arrayListOf<String>()
+    var ListaBiografias = arrayListOf<String>()
+    var ListaContacto = arrayListOf<String>()
+    var ListaUrlFotos = arrayListOf<String>()
 
     var pos : Int = -1
     var indice = 0
@@ -50,33 +46,37 @@ class ScreenCinco : Fragment() {
                             val twitter     =   dataSnapshot.child("twitter")   .getValue().toString()
                             val facebook    =   dataSnapshot.child("facebook")  .getValue().toString()
                             val youtube     =   dataSnapshot.child("youtube")   .getValue().toString()
+                            val correo      =   dataSnapshot.child("email")     .getValue().toString()
 
                             var nombrecompleto = nombre + " " + apellido
                             var contacto = ""
-                            if (facebook!="" && twitter!="" && youtube!=""){
-                                contacto = "Facebook: "+facebook+" Twitter: "+twitter+" Youtube: "+youtube
+                            if (facebook!="" && twitter!="" && youtube!="" && correo !=""){
+                                contacto = "Correo: $correo\nFacebook: $facebook\nTwitter: $twitter\nYoutube:$youtube"
                             }
                             else{
+                                if (correo!=""){
+                                    contacto = contacto + "Correo: $correo\n"
+                                }
                                 if (facebook!=""){
-                                    contacto = contacto + "Facebook: "+facebook+" "
+                                    contacto = contacto + "Facebook: $facebook\n"
                                 }
                                 if (twitter!=""){
-                                    contacto = contacto + "Twitter: "+twitter+" "
+                                    contacto = contacto + "Twitter: $twitter\n"
                                 }
                                 if (youtube!=""){
-                                    contacto = contacto + "Youtube: "+youtube+" "
+                                    contacto = contacto + "Youtube: $youtube\n"
                                 }
                             }
 
-
                             visor_de_datos = root.findViewById(R.id.text)
-                            visor_de_datos.append("Nombre Completo: "+nombrecompleto+" \nBiografia: "+biografia+"\nFile: "+foto+"\n$contacto\n\n")
+                            visor_de_datos.append("Nombre Completo: $nombrecompleto\nBiografia: $biografia\nFile: $foto\nContacto: $contacto\n\n")
                             visor_de_datos.setMovementMethod(ScrollingMovementMethod())
 
-                            nombres_fic[indice]     =   nombrecompleto
-                            biografias_fic[indice]  =   biografia
-                            contacto_fic[indice]    =   contacto
-                            indice += 1
+                            ListaNombres    .add(indice, nombrecompleto)
+                            ListaBiografias .add(indice, biografia)
+                            ListaContacto   .add(indice,contacto)
+                            ListaUrlFotos   .add(indice, foto)
+                            indice+=1
                         }
                         override fun onCancelled(databaseError: DatabaseError) {}
                     })
@@ -88,7 +88,7 @@ class ScreenCinco : Fragment() {
         // ======================= fin de recibir de firebase ==================================
 
         contenedor_imagen       =       root.findViewById(R.id.imagen)
-        switcher_nombres        =       root.findViewById(R.id.textswitcher)
+        switcher_nombres        =       root.findViewById(R.id.nombres)
         switcher_biografias     =       root.findViewById(R.id.biografia)
         switcher_redes          =       root.findViewById(R.id.contactame)
         siguiente               =       root.findViewById(R.id.siguiente)
@@ -97,7 +97,7 @@ class ScreenCinco : Fragment() {
             override fun makeView(): View {
                 val textview=TextView(activity)
                 textview.gravity=Gravity.CENTER
-                textview.textSize=22F
+                textview.textSize=26F
                 return textview
             }
         }) // Mostrar el textbox
@@ -112,20 +112,20 @@ class ScreenCinco : Fragment() {
         switcher_redes.setFactory (object : ViewSwitcher.ViewFactory {
             override fun makeView(): View {
                 val textview3=TextView(activity)
-                textview3.gravity=Gravity.CENTER
+                textview3.gravity=Gravity.START
                 textview3.textSize=16F
                 return textview3
             }
         }) // Mostrar el textbox
         siguiente.setOnClickListener {
-            if (pos<nombres_fic.size-1)
+            if (pos<ListaNombres.size-1)
             {
                 pos+=1
                 Toast.makeText(activity, pos.toString(), Toast.LENGTH_SHORT).show()
-                Glide.with(this).load(fotos_url[pos]).into(contenedor_imagen)
-                switcher_nombres.setText(nombres_fic[pos])
-                switcher_biografias.setText(biografias_fic[pos])
-                switcher_redes.setText(contacto_fic[pos])
+                Glide.with(this).load(ListaUrlFotos[pos]).into(contenedor_imagen)
+                switcher_nombres.setText(ListaNombres[pos])
+                switcher_biografias.setText(ListaBiografias[pos])
+                switcher_redes.setText(ListaContacto[pos])
             }
         }
         anterior.setOnClickListener {
@@ -133,10 +133,10 @@ class ScreenCinco : Fragment() {
             {
                 pos -= 1
                 Toast.makeText(activity, pos.toString(), Toast.LENGTH_SHORT).show()
-                Glide.with(this).load(fotos_url[pos]).into(contenedor_imagen)
-                switcher_nombres.setText(nombres_fic[pos])
-                switcher_biografias.setText(biografias_fic[pos])
-                switcher_redes.setText(contacto_fic[pos])
+                Glide.with(this).load(ListaUrlFotos[pos]).into(contenedor_imagen)
+                switcher_nombres.setText(ListaNombres[pos])
+                switcher_biografias.setText(ListaBiografias[pos])
+                switcher_redes.setText(ListaContacto[pos])
             }
         }
         return root
